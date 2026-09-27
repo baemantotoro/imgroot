@@ -1,0 +1,157 @@
+:root {
+  --bg: #faf9f6;
+  --surface: #ffffff;
+  --ink: #23262b;
+  --muted: #6b7280;
+  --border: #d8d5cd;
+  --accent: #2f6f6b;
+  --accent-soft: rgba(47, 111, 107, 0.12);
+  --danger: #b23a2e;
+  --danger-bg: rgba(178, 58, 46, 0.16);
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Noto Sans KR', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 64px 24px 80px;
+}
+
+.page-header h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  margin: 0 0 40px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.settings label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.settings input {
+  width: 110px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.settings input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.editor-wrap {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.editor-wrap:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* editor-input과 backdrop은 폰트, 패딩, 줄간격이 완전히 같아야
+   하이라이트 위치가 실제 글자 위치와 정확히 겹칩니다. */
+.editor-input,
+.backdrop {
+  margin: 0;
+  padding: 18px 20px;
+  width: 100%;
+  min-height: 280px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  border: 0;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: transparent;
+  overflow: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.editor-input {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  color: var(--ink);
+  resize: vertical;
+  caret-color: var(--ink);
+}
+
+.editor-input:focus {
+  outline: none;
+}
+
+.overflow-mark {
+  background: var(--danger-bg);
+  border-radius: 2px;
+}
+
+.status {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+#countText.over-limit {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.overflow-text {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
