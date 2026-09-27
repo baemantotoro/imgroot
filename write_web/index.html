@@ -29,8 +29,14 @@
     </section>
 
     <footer class="status" id="status" aria-live="polite">
-      <span id="countText">0 / 1000 (공백 포함)</span>
-      <span id="overflowText" class="overflow-text" hidden></span>
+      <div class="status-info">
+        <span id="countText">0 / 1000 (공백 포함)</span>
+        <span id="overflowText" class="overflow-text" hidden></span>
+      </div>
+      <div class="toolbar">
+        <button id="copyBtn" type="button" class="btn btn-ghost">복사</button>
+        <button id="saveBtn" type="button" class="btn btn-solid">저장 (.md)</button>
+      </div>
     </footer>
   </main>
 
