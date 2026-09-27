@@ -15,7 +15,9 @@
   function render() {
     const max = Math.max(1, parseInt(maxLengthInput.value, 10) || 0);
     const text = editor.value;
-    const length = text.length; // 문자 수(코드 유닛) 기준
+    // 문자 수(코드 유닛) 기준. 완성형 한글 음절은 1글자 = 1코드 유닛이라
+    // 별도 처리 없이도 정확히 세어지고, 공백/줄바꿈도 그대로 포함됩니다.
+    const length = text.length;
 
     let html;
     if (length > max) {
@@ -36,7 +38,8 @@
     backdrop.innerHTML = html;
 
     const over = length > max;
-    countText.textContent = length.toLocaleString() + ' / ' + max.toLocaleString();
+    countText.textContent =
+      length.toLocaleString() + ' / ' + max.toLocaleString() + ' (공백 포함)';
     countText.classList.toggle('over-limit', over);
 
     if (over) {
