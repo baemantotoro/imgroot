@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-04",
-  "pages_url": "https://baemantotoro.github.io/imgroot/daily_insight/2026_11/2026_11_04.html",
+  "date": "2026-11-05",
+  "pages_url": "https://baemantotoro.github.io/imgroot/daily_insight/2026_11/2026_11_05.html",
   "pages_ready": true,
-  "weather_alert": false,
-  "sipsung": "상관",
-  "jinsi": "己亥",
-  "kospi": 5662.3,
-  "kospi_change": 0.24,
-  "generated_at": "2026-11-04T15:47:12.606930"
+  "weather_alert": true,
+  "sipsung": "편재",
+  "jinsi": "庚子",
+  "kospi": 5648.79,
+  "kospi_change": null,
+  "generated_at": "2026-11-05T07:22:54.208720"
 }
