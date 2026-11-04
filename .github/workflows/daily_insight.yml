@@ -20,11 +20,11 @@ jobs:
     env:
       TZ: Asia/Seoul
       PYTHONIOENCODING: utf-8
-      OUT_DIR: ${{ runner.temp }}/out
+      OUT_DIR: /tmp/di_out
       NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
       NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
       KMA_API_KEY: ${{ secrets.KMA_API_KEY }}
-      GH_PAT: ${{ secrets.GH_PAT }}
+      GH_PAT: ${{ secrets.IMGROOT }}
       GITHUB_REPO: ${{ github.repository }}
       GITHUB_BRANCH: main
     steps:
